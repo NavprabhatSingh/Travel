@@ -1,0 +1,55 @@
+<!-- budget.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Set Budget</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Set Your Budget</h1>
+  </header>
+
+  <div class="main-content">
+    <h2>Enter Your Budget</h2>
+
+    <label for="budget-input">Budget:</label>
+    <input type="number" id="budget-input" placeholder="Enter your budget" required>
+    <button class="btn" onclick="setBudget()">Save Budget</button>
+
+    <h3>Current Budget:</h3>
+    <p id="current-budget">No budget set yet</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Travel Expense Tracker</p>
+  </footer>
+
+  <script>
+    // Check if a budget is already set
+    document.addEventListener("DOMContentLoaded", function() {
+      const savedBudget = localStorage.getItem('budget');
+      if (savedBudget) {
+        document.getElementById('current-budget').textContent = `Current Budget: $${savedBudget}`;
+      }
+    });
+
+    // Save the budget to localStorage
+    function setBudget() {
+      const budget = document.getElementById('budget-input').value;
+      if (budget) {
+        localStorage.setItem('budget', budget);
+        document.getElementById('current-budget').textContent = `Current Budget: $${budget}`;
+        alert('Budget saved!');
+      } else {
+        alert('Please enter a valid budget.');
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+.App {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .budget-input {
+    margin-bottom: 20px;
+  }
+  
+  .expenses {
+    margin-top: 20px;
+  }
+  
+  .progress-tracker {
+    margin-top: 30px;
+  }
+  
+  .progress-bar-container {
+    width: 80%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+  }
+  
+  .add-expense {
+    margin-top: 40px;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  input[type="text"], input[type="number"] {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 150px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  p[style="color: red;"] {
+    font-weight: bold;
+  }
+  

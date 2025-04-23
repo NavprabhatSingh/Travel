@@ -1,0 +1,46 @@
+<!-- analytics.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>View Analytics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>View Expense Analytics</h1>
+  </header>
+
+  <div class="main-content">
+    <h2>All Logged Expenses</h2>
+    <ul id="expense-summary">
+      <!-- Expense items will be shown here -->
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Travel Expense Tracker</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+      const expenseSummary = document.getElementById('expense-summary');
+
+      if (expenses.length > 0) {
+        expenses.forEach(function(expense) {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${expense.name} - $${expense.amount} (${expense.category})`;
+          expenseSummary.appendChild(listItem);
+        });
+      } else {
+        expenseSummary.innerHTML = '<li>No expenses logged yet!</li>';
+      }
+    });
+  </script>
+
+</body>
+</html>
