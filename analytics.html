@@ -33,7 +33,8 @@
       if (expenses.length > 0) {
         expenses.forEach(function(expense) {
           const listItem = document.createElement('li');
-          listItem.textContent = `${expense.name} - $${expense.amount} (${expense.category})`;
+          // Replaced `$` with `₹` for displaying the expenses in Indian Rupee
+          listItem.textContent = `${expense.name} - ₹${expense.amount} (${expense.category})`;
           expenseSummary.appendChild(listItem);
         });
       } else {
