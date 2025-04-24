@@ -1,88 +1,326 @@
-/* style.css */
-
-/* Reset default margin and padding for all elements */
+/* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  padding: 20px;
+}
+
+.navbar .logo a {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar nav {
+  flex-grow: 1;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.navbar nav ul li {
+  display: inline;
+}
+
+.navbar nav ul li a {
+  color: #bdc3c7;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+  transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+  color: #f39c12;
+}
+
+.navbar nav ul li .active {
+  color: #f39c12;
+}
+
+.navbar .auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar .auth-buttons a {
+  color: #fff;
+  text-decoration: none;
+  background-color: #f39c12;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .auth-buttons a:hover {
+  background-color: #e67e22;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.navbar nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar nav ul li {
+  display: inline;
+}
+
+/* Hide the navbar menu on mobile */
+.navbar nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar nav ul li {
+  display: inline;
+}
+
+/* Hero Section */
+.hero {
+  background: url('hero-image.jpg') no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Company History */
+.company-history {
+  padding: 40px;
+  background-color: #f5f5f5;
+}
+
+.company-history h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.company-history p {
+  font-size: 1.1rem;
+}
+
+/* Mission & Vision */
+.mission-vision {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background-color: #fff;
+}
+
+.mission, .vision {
+  flex: 1;
+}
+
+.mission h3, .vision h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.mission p, .vision p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Team Section */
+.team {
+  background-color: #f8f9fa;
+  padding: 40px;
+}
+
+.team h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.carousel {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.team-member h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.team-member p {
+  font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer .quick-links,
+.footer .social-media,
+.footer .contact-info {
+  display: flex;
+  gap: 20px;
+}
+
+.footer .quick-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer .quick-links ul li a {
+  color: #bdc3c7;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer .quick-links ul li a:hover {
+  color: #f39c12;
+}
+
+.footer .social-media a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer .social-media a:hover {
+  color: #f39c12;
+}
+
+.footer .contact-info p {
+  margin: 5px 0;
+}
+
+.footer .copyright {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #bdc3c7;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .navbar nav ul {
+    display: none; /* Hide the menu initially */
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: #2c3e50;
+    padding: 20px;
+    position: absolute;
+    top: 70px;
+    left: 0;
   }
-  
-  /* Body styling */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Header styling */
-  header {
-    background-color: #2d87f0;
-    color: white;
+
+  .navbar nav ul li {
     text-align: center;
-    padding: 40px 20px;
+    width: 100%;
   }
-  
-  header h1 {
-    font-size: 2.5rem;
+
+  /* Show the hamburger menu on mobile */
+  .hamburger {
+    display: flex;
   }
-  
-  header p {
-    font-size: 1.2rem;
-    margin-top: 10px;
+
+  /* Show the menu when hamburger is clicked */
+  .navbar.active nav ul {
+    display: flex;
   }
-  
-  /* Main content section */
-  .main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    text-align: center;
+
+  .navbar nav ul li a {
+    color: #fff;
   }
-  
-  .main-content h2 {
+
+  /* Hero Section */
+  .hero h1 {
     font-size: 2rem;
   }
-  
-  .main-content p {
-    font-size: 1.1rem;
-    margin-top: 20px;
-  }
-  
-  .main-content input {
-    padding: 10px;
+
+  .hero p {
     font-size: 1rem;
-    margin-top: 20px;
-    width: 200px;
   }
-  
-  .main-content .btn {
-    background-color: #2d87f0;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    margin-top: 20px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  .main-content .btn:hover {
-    background-color: #1c5e9e;
-  }
-  
-  /* Footer styling */
-  footer {
-    background-color: #333;
-    color: white;
+
+  .footer {
+    flex-direction: column;
     text-align: center;
-    padding: 15px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
   }
-  
-  footer p {
-    font-size: 0.9rem;
+
+  .footer .quick-links,
+  .footer .social-media,
+  .footer .contact-info {
+    flex-direction: column;
+    align-items: center;
   }
-  
+}
