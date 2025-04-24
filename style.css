@@ -1,0 +1,88 @@
+/* style.css */
+
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #2d87f0;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Main content section */
+  .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .main-content h2 {
+    font-size: 2rem;
+  }
+  
+  .main-content p {
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+  
+  .main-content input {
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 20px;
+    width: 200px;
+  }
+  
+  .main-content .btn {
+    background-color: #2d87f0;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .main-content .btn:hover {
+    background-color: #1c5e9e;
+  }
+  
+  /* Footer styling */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+  }
+  
